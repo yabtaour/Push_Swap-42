@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_stack.c                                  :+:      :+:    :+:   */
+/*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 18:06:10 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 18:06:11 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/11 14:49:36 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/11 14:49:37 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+#include "instruction.h"
 
-void	ft_create_stack(t_stack **stack_a, char **arguments)
+void    ft_sa(t_stack **stack_a)
 {
-	int		i;
+    t_stack *stack_a_clone;
+    int     data_temp;
 
-	i  = 0;
-	while (arguments[i])
-	{
-		*stack_a = ft_add_to_stack_back(*stack_a, atoi(arguments[i]));
-		i++;
-	}
+    stack_a_clone = *stack_a;
+    if (stack_a != NULL)
+    {
+        if (stack_a_clone->next != NULL)
+        {
+            data_temp = stack_a_clone->data;
+            stack_a_clone->data = stack_a_clone->next->data;
+            stack_a_clone->next->data = data_temp;
+        }
+    }
 }

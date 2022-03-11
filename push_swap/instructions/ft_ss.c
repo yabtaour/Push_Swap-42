@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_stack.c                                  :+:      :+:    :+:   */
+/*   ft_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 18:06:10 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 18:06:11 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/11 14:49:48 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/11 14:49:49 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+#include "instruction.h"
 
-void	ft_create_stack(t_stack **stack_a, char **arguments)
+void    ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-	int		i;
-
-	i  = 0;
-	while (arguments[i])
-	{
-		*stack_a = ft_add_to_stack_back(*stack_a, atoi(arguments[i]));
-		i++;
-	}
+    ft_sa(stack_a);
+    ft_sb(stack_b);
 }

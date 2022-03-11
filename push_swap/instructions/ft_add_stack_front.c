@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_stack.c                                  :+:      :+:    :+:   */
+/*   ft_add_stack_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 18:06:10 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 18:06:11 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/11 19:58:29 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/11 19:58:30 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+#include "instruction.h"
 
-void	ft_create_stack(t_stack **stack_a, char **arguments)
+void	ft_add_stack_front(t_stack **stack, t_stack *node)
 {
-	int		i;
+	t_stack	*stack_clone;
 
-	i  = 0;
-	while (arguments[i])
-	{
-		*stack_a = ft_add_to_stack_back(*stack_a, atoi(arguments[i]));
-		i++;
-	}
+	stack_clone = *stack;
+	node->next = stack_clone;
+	stack_clone->previous = node;
 }

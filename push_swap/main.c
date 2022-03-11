@@ -17,9 +17,14 @@ int main(int argc, char *argv[])
 	int		i;
 	char	*args;
 	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_stack *stack_a_clone;
+	int j;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	i = 1;
+	j = 0;
 	if (argc > 1)
 	{
 		while (i < argc)
@@ -34,16 +39,25 @@ int main(int argc, char *argv[])
 		}
 		arguments = ft_split(args, ' ');
 		ft_create_stack(&stack_a, arguments);
-		// if (!ft_check_sort(stack_a))
-		// {
-		// 	printf("numbers are already sorted");
-		// 	return (1);
-		// }
-		while (stack_a != NULL)
+		if (!ft_check_sort(stack_a))
 		{
-			printf("%d\n", stack_a->data);
-			stack_a = stack_a->next;
+			printf("numbers are already sorted");
+			return (1);
 		}
+		stack_a_clone = stack_a;
+		while (stack_a_clone != NULL)
+		{
+			printf("%d\n", stack_a_clone->data);
+			stack_a_clone = stack_a_clone->next;
+		}
+		printf("\n");
+		ft_sa(&stack_a);
+		stack_a_clone = stack_a;
+		// while (stack_a_clone != NULL)
+		// {
+		// 	printf("%d\n", stack_a_clone->data);
+		// 	stack_a_clone = stack_a_clone->next;
+		// }
 	}
 	return (0);
 }

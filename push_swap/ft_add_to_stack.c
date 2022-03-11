@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-t_stack	*ft_add_to_stack(t_stack *stack, int data)
+t_stack	*ft_add_to_stack_back(t_stack *stack, int data)
 {
 	t_stack *node;
 	t_stack *stack_clone;
