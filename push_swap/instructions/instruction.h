@@ -26,6 +26,7 @@ void	ft_sa(t_stack **stack_a);
 void    ft_sb(t_stack **stack_b);
 void    ft_ss(t_stack **stack_a, t_stack **stack_b);
 void    ft_pb(t_stack **stack_a, t_stack **stack_b);
+void    ft_pa(t_stack **stack_b, t_stack **stack_a);
 void	ft_add_stack_front(t_stack **stack, t_stack *node);
 t_stack *ft_create_node(int	data);
 

@@ -13,12 +13,18 @@
 
 void    ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-    //t_stack *stack_a_node;
+	t_stack *stack_clone_a;
 
-    if (stack_a != NULL)
-    {
-        //stack_a_node = *stack_a;
-        //printf("%d\n", stack_a_node->data);
-        ft_add_stack_front(stack_b, *stack_a);
-    }
+	if (stack_a != NULL)
+	{
+		stack_clone_a = *stack_a;
+		if (stack_clone_a->next == NULL)
+			stack_a = NULL;
+		else
+		{
+			*stack_a = stack_clone_a->next;
+			free(stack_clone_a);
+		}
+		ft_add_stack_front(stack_b, *stack_a);
+	}
 }
