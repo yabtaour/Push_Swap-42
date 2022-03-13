@@ -13,9 +13,18 @@
 
 void	ft_add_stack_front(t_stack **stack, t_stack *node)
 {
-	t_stack	*stack_clone;
+	t_stack	*new_node;
 
-	stack_clone = *stack;
-	node->next = stack_clone;
-	stack_clone->previous = node;
+	if (stack && !*stack)
+	{
+		new_node = ft_create_node(node->data);
+		*stack = new_node;
+	}
+	else if (stack && *stack && node)
+	{
+		new_node = ft_create_node(node->data);
+		new_node->next = *stack;
+		(*stack)->previous = new_node;
+		(*stack) = new_node;
+	}
 }

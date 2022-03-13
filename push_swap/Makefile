@@ -13,6 +13,8 @@ SRC_IN = ./instructions/ft_sa.c\
 			./instructions/ft_sb.c\
 			./instructions/ft_ss.c\
 			./instructions/ft_add_stack_front.c\
+			./instructions/ft_pb.c\
+			./instructions/ft_create_node.c\
 
 OBJ = ${SRC:.c=.o}
 

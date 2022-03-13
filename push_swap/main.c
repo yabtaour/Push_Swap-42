@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	t_stack *stack_a_clone;
+	t_stack *stack_b_clone;
 	int j;
 
 	stack_a = NULL;
@@ -51,8 +52,27 @@ int main(int argc, char *argv[])
 			stack_a_clone = stack_a_clone->next;
 		}
 		printf("\n");
-		ft_sa(&stack_a);
-		stack_a_clone = stack_a;
+		//stack_b_clone = stack_b;
+		// while (stack_b_clone != NULL)
+		// {
+		// 	printf("%d\n", stack_b_clone->data);
+		// 	stack_b_clone = stack_b_clone->next;
+		// }
+		ft_pb(&stack_a, &stack_b);
+		ft_pb(&stack_a, &stack_b);
+		ft_pb(&stack_a, &stack_b);
+		ft_pb(&stack_a, &stack_b);
+		stack_b_clone = stack_b;
+		// if (stack_b_clone != NULL)
+		// 	printf("khaawyaa \n");
+		while (stack_b_clone != NULL)
+		{
+			//printf("khaawyaa \n");
+			printf("%d\n", stack_b_clone->data);
+			stack_b_clone = stack_b_clone->next;
+		}
+		//ft_sa(&stack_a);
+		//stack_a_clone = stack_a;
 		// while (stack_a_clone != NULL)
 		// {
 		// 	printf("%d\n", stack_a_clone->data);
