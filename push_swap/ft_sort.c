@@ -35,11 +35,27 @@ void    ft_sort(t_stack **stack_a)
 	ft_pb(stack_a, &stack_b);
 	ft_pb(stack_a, &stack_b);
 	stack_b_clone = stack_b;
-	PRINT
 	printf("\nstack_b = ");
-	while (stack_b != NULL)
+	while (stack_b_clone != NULL)
 	{
-		printf("[%d]->", stack_b->data);
-		stack_b = stack_b->next;
+		printf("[%d]->", stack_b_clone->data);
+		stack_b_clone = stack_b_clone->next;
+	}
+
+	ft_pa(&stack_b, stack_a);
+	ft_pa(&stack_b, stack_a);
+	stack_a_clone = *stack_a;
+	printf("\nstack_a = ");
+	while (stack_a_clone)
+	{
+		printf("[%d]->", stack_a_clone->data);
+		stack_a_clone = stack_a_clone->next;
+	}
+	stack_b_clone = stack_b;
+	printf("\nstack_b = ");
+	while (stack_b_clone != NULL)
+	{
+		printf("[%d]->", stack_b_clone->data);
+		stack_b_clone = stack_b_clone->next;
 	}
 }
