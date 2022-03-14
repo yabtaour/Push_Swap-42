@@ -8,6 +8,5 @@ t_stack	*ft_create_node(int	data)
 	node->next = NULL;
 	node->previous = NULL;
 	node->data = data;
-	printf("%d\n", node->data);
 	return (node);
 }

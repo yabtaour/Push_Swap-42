@@ -15,7 +15,6 @@ void	ft_add_stack_front(t_stack **stack, t_stack *node)
 {
 	t_stack	*new_node;
 
-	PRINT
 	if (stack && !*stack)
 	{
 		new_node = ft_create_node(node->data);
