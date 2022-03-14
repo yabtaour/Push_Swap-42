@@ -24,5 +24,6 @@ t_stack *ft_new_node(int data);
 t_stack	*ft_add_to_stack_back(t_stack *stack, int data);
 int     ft_check_imposter(char *args);
 int     ft_check_sort(t_stack *stack);
+void    ft_sort(t_stack **stack_a);
 
 #endif

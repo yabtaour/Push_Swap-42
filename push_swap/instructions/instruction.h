@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# define PRINT printf("\nthe function is [%s]\n", __func__);
 
 typedef struct s_stack{
     int data;

@@ -2,12 +2,13 @@ NAME = push_swap
 
 CC = CC
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 
 SRC = main.c ft_calloc.c ft_split.c ft_strjoin.c\
 		ft_strlen.c ft_substr.c ft_new_node.c\
 		ft_add_to_stack.c ft_create_stack.c\
 		ft_check_imposter.c ft_check_sort.c\
+		ft_sort.c\
 
 SRC_IN = ./instructions/ft_sa.c\
 			./instructions/ft_sb.c\
