@@ -9,5 +9,19 @@
 /*   Updated: 2022/03/11 14:48:29 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "instruction.h"
 
+void	ft_ra(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
 
+	PRINT
+	if (*stack_a)
+	{
+		stack_a_clone = *stack_a;
+		*stack_a = ft_add_to_stack_back(*stack_a, stack_a_clone->data);
+		*stack_a = (*stack_a)->next;
+		(*stack_a)->previous = NULL;
+		free(stack_a_clone);
+	}
+}

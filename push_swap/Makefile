@@ -17,6 +17,12 @@ SRC_IN = ./instructions/ft_sa.c\
 			./instructions/ft_pb.c\
 			./instructions/ft_pa.c\
 			./instructions/ft_create_node.c\
+			./instructions/ft_ra.c\
+			./instructions/ft_rb.c\
+			./instructions/ft_rr.c\
+			./instructions/ft_rra.c\
+			./instructions/ft_rrb.c\
+			./instructions/ft_rrr.c\
 
 OBJ = ${SRC:.c=.o}
 

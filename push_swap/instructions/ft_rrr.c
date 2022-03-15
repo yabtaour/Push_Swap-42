@@ -9,5 +9,10 @@
 /*   Updated: 2022/03/11 14:49:23 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "instruction.h"
 
-
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_rra(stack_a);
+	ft_rrb(stack_b);
+}

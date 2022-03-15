@@ -20,7 +20,7 @@ int ft_check_imposter(char *args)
     {
         if (args[i] != ' ')
         {
-            if ((args[i] > '9' || args[i] < '0'))
+            if ((args[i] > '9' || args[i] < '0' || args[i] != '-'))
                 return (1);
         }
         i++;
