@@ -14,10 +14,11 @@
 void    ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
-	//t_stack	*stack_b = NULL;
+	t_stack	*stack_b;
 	int		i;
 
 	i = 0;
+	stack_b = NULL;
 	PRINT
 	stack_a_clone = *stack_a;
 	while (stack_a_clone != NULL)
@@ -29,6 +30,8 @@ void    ft_sort(t_stack **stack_a)
 		ft_sort_2nums(stack_a);
 	if (i == 3)
 		ft_sort_3nums(stack_a);
+	if (i > 3 && i < 6)
+		ft_sort_more_than3(stack_a, &stack_b, i);
 	stack_a_clone = *stack_a;
 	while (stack_a_clone)
 	{

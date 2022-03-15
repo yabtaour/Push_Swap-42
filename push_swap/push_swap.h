@@ -27,5 +27,6 @@ int     ft_check_sort(t_stack *stack);
 void    ft_sort(t_stack **stack_a);
 void    ft_sort_3nums(t_stack **stack_a);
 void	ft_sort_2nums(t_stack **stack_a);
+void	ft_sort_more_than3(t_stack	**stack_a, t_stack **stack_b, int i);
 
 #endif
