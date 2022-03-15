@@ -14,11 +14,21 @@
 void    ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
-	// t_stack	*stack_b_clone;
-	// t_stack	*stack_b = NULL;
+	//t_stack	*stack_b = NULL;
+	int		i;
 
+	i = 0;
 	PRINT
-	printf("stack a = \n");
+	stack_a_clone = *stack_a;
+	while (stack_a_clone != NULL)
+	{
+		i++;
+		stack_a_clone = stack_a_clone->next;
+	}
+	if (i == 2)
+		ft_sort_2nums(stack_a);
+	if (i == 3)
+		ft_sort_3nums(stack_a);
 	stack_a_clone = *stack_a;
 	while (stack_a_clone)
 	{
@@ -26,160 +36,4 @@ void    ft_sort(t_stack **stack_a)
 		stack_a_clone = stack_a_clone->next;
 	}
 	printf("\n");
-	ft_rra(stack_a);
-	printf("stack a = \n");
-	stack_a_clone = *stack_a;
-	while (stack_a_clone)
-	{
-		printf("[%d]->", stack_a_clone->data);
-		stack_a_clone = stack_a_clone->next;
-	}
-	printf("\n");
-	// ft_pb(stack_a, &stack_b);
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// ft_ra(stack_a);
-	// printf("stack b = \n");
-	// stack_b_clone = stack_b;
-	// while (stack_b_clone)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// printf("stack a = \n");
-	// stack_a_clone = *stack_a;
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// ft_sa(stack_a);
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// ft_pb(stack_a, &stack_b);
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// ft_pb(stack_a, &stack_b);
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// ft_ss(stack_a, &stack_b);
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// printf("\n");
-	// ft_ss(stack_a, &stack_b);
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// printf("\n");
-	// ft_pa(&stack_b, stack_a);
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// ft_pa(&stack_b, stack_a);
-	// stack_a_clone = *stack_a;
-	// printf("stack a = \n");
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d]->", stack_a_clone->data);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
-	// printf("\n");
-	// stack_b_clone = stack_b;
-	// printf("stack b = \n");
-	// while (stack_b_clone != NULL)
-	// {
-	// 	printf("[%d]->", stack_b_clone->data);
-	// 	stack_b_clone = stack_b_clone->next;
-	// }
-	// printf("\n");
 }

@@ -25,5 +25,7 @@ t_stack	*ft_add_to_stack_back(t_stack *stack, int data);
 int     ft_check_imposter(char *args);
 int     ft_check_sort(t_stack *stack);
 void    ft_sort(t_stack **stack_a);
+void    ft_sort_3nums(t_stack **stack_a);
+void	ft_sort_2nums(t_stack **stack_a);
 
 #endif
