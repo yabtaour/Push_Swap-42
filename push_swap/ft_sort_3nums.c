@@ -51,25 +51,9 @@ void	ft_sort_3nums(t_stack **stack_a)
 
 void	ft_sort_more_than3(t_stack	**stack_a,	t_stack **stack_b, int	i)
 {
+	t_stack	*stack_a_clone;
+	int		min;
+
 	PRINT
-	if (i == 4)
-	{
-		if ((*stack_a)->data > (*stack_a)->next->data)
-			ft_sa(stack_a);
-		ft_pb(stack_a, stack_b);
-		ft_sort_3nums(stack_a);
-		ft_pa(stack_b, stack_a);
-	}
-	else if (i == 5)
-	{
-		if ((*stack_a)->data > (*stack_a)->next->data)
-			ft_sa(stack_a);
-		ft_pb(stack_a, stack_b);
-		if ((*stack_a)->data > (*stack_a)->next->data)
-			ft_sa(stack_a);
-		ft_pb(stack_a, stack_b);
-		ft_sort_3nums(stack_a);
-		ft_pa(stack_b, stack_a);
-		ft_pa(stack_b, stack_a);
-	}
+
 }

@@ -24,7 +24,6 @@ void    ft_pb(t_stack **stack_a, t_stack **stack_b)
 		else
 		{
 			*stack_a = stack_clone_a->next;
-			free(stack_clone_a);
 		}
 		ft_add_stack_front(stack_b, stack_clone_a);
 	}
