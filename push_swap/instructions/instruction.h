@@ -22,7 +22,7 @@ typedef struct s_stack{
 # include <stdio.h>
 # include <stdlib.h>
 # include "../push_swap.h"
-# define PRINT printf("\nthe function is [%s]\n", __func__);
+# define PRINT printf("the function is [%s]\n", __func__);
 
 void	ft_sa(t_stack **stack_a);
 void    ft_sb(t_stack **stack_b);
