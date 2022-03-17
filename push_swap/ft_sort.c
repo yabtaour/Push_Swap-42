@@ -29,8 +29,10 @@ void    ft_sort(t_stack **stack_a)
 		ft_sort_2nums(stack_a);
 	if (i == 3)
 		ft_sort_3nums(stack_a);
-	if (i > 3)
+	if (i > 3 && i < 30)
 		ft_sort_more_than3(stack_a, &stack_b, i);
+	if (i >= 30 && i <= 100)
+		ft_sort_100(stack_a);
 	stack_a_clone = *stack_a;
 	while (stack_a_clone)
 	{

@@ -124,3 +124,135 @@ void	ft_sort_more_than3(t_stack	**stack_a,	t_stack **stack_b, int	i)
 	while (ft_stack_size(stack_b) != 0)
 		ft_pa(stack_b, stack_a);
 }
+
+int		ft_check_chunk1(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
+
+	stack_a_clone = *stack_a;
+	while (stack_a_clone)
+	{
+		if (stack_a_clone->data >= 0 && stack_a_clone->data <= 19)
+			return (1);
+	}
+	return (0);
+}
+
+int		ft_check_chunk1(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
+
+	stack_a_clone = *stack_a;
+	while (stack_a_clone)
+	{
+		if (stack_a_clone->data >= 20 && stack_a_clone->data <= 39)
+			return (1);
+	}
+	return (0);
+}
+
+int		ft_check_chunk1(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
+
+	stack_a_clone = *stack_a;
+	while (stack_a_clone)
+	{
+		if (stack_a_clone->data >= 40 && stack_a_clone->data <= 59)
+			return (1);
+	}
+	return (0);
+}
+
+int		ft_check_chunk1(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
+
+	stack_a_clone = *stack_a;
+	while (stack_a_clone)
+	{
+		if (stack_a_clone->data >= 60 && stack_a_clone->data <= 79)
+			return (1);
+	}
+	return (0);
+}
+
+int		ft_check_chunk1(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
+
+	stack_a_clone = *stack_a;
+	while (stack_a_clone)
+	{
+		if (stack_a_clone->data >= 80 && stack_a_clone->data <= 100)
+			return (1);
+	}
+	return (0);
+}
+
+void	ft_sort_100(t_stack **stack_a)
+{
+	t_stack	*stack_a_clone;
+	int		chunk_1;
+
+	while (ft_check_chunk1)
+	{
+		stack_a_clone = *stack_a;
+		while (stack_a_clone->data < 0 || stack_a_clone->data > 19)
+			stack_a_clone = stack_a_clone->next;
+		chunk_1 = stack_a_clone->data;
+		if ((ft_find_position(stack_a, chunk_1)) >= (ft_stack_size(stack_a) / 2))
+			while ((*stack_a) != chunk_1)
+				ft_rra(stack_a);
+			else
+				fa_ra(stack_a);		
+	}
+	while (ft_check_chunk2(stack_a))
+	{
+		stack_a_clone = *stack_a;
+		while (stack_a_clone->data < 20 || stack_a_clone->data > 39)
+			stack_a_clone = stack_a_clone->next;
+		chunk_1 = stack_a_clone->data;
+		if ((ft_find_position(stack_a, chunk_1)) >= (ft_stack_size(stack_a) / 2))
+			while ((*stack_a) != chunk_1)
+				ft_rra(stack_a);
+			else
+				fa_ra(stack_a);	
+	}
+	while (ft_check_chunk3(stack_a))
+	{
+		stack_a_clone = *stack_a;
+		while (stack_a_clone->data < 40 || stack_a_clone->data > 59)
+			stack_a_clone = stack_a_clone->next;
+		chunk_1 = stack_a_clone->data;
+		if ((ft_find_position(stack_a, chunk_1)) >= (ft_stack_size(stack_a) / 2))
+			while ((*stack_a) != chunk_1)
+				ft_rra(stack_a);
+			else
+				fa_ra(stack_a);	
+	}
+	while (ft_check_chunk2(stack_a))
+	{
+		stack_a_clone = *stack_a;
+		while (stack_a_clone->data < 60 || stack_a_clone->data > 79)
+			stack_a_clone = stack_a_clone->next;
+		chunk_1 = stack_a_clone->data;
+		if ((ft_find_position(stack_a, chunk_1)) >= (ft_stack_size(stack_a) / 2))
+			while ((*stack_a) != chunk_1)
+				ft_rra(stack_a);
+			else
+				fa_ra(stack_a);	
+	}
+	while (ft_check_chunk2(stack_a))
+	{
+		stack_a_clone = *stack_a;
+		while (stack_a_clone->data < 20 || stack_a_clone->data > 39)
+			stack_a_clone = stack_a_clone->next;
+		chunk_1 = stack_a_clone->data;
+		if ((ft_find_position(stack_a, chunk_1)) >= (ft_stack_size(stack_a) / 2))
+			while ((*stack_a) != chunk_1)
+				ft_rra(stack_a);
+			else
+				fa_ra(stack_a);	
+	}	
+}
