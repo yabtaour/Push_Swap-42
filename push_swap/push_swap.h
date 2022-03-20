@@ -22,11 +22,13 @@ char	**ft_split(char *s, char c);
 void	ft_create_stack(t_stack **stack_a, char **arguments);
 t_stack *ft_new_node(int data);
 t_stack	*ft_add_to_stack_back(t_stack *stack, int data);
+t_stack	*ft_add_to_stack_back_pos(t_stack *stack, int data, int pos);
 int     ft_check_imposter(char *args);
 int     ft_check_sort(t_stack *stack);
 void    ft_sort(t_stack **stack_a);
 void    ft_sort_3nums(t_stack **stack_a);
 void	ft_sort_2nums(t_stack **stack_a);
 void	ft_sort_more_than3(t_stack	**stack_a, t_stack **stack_b, int i);
+void	ft_sort_100(t_stack **stack_a);
 
 #endif

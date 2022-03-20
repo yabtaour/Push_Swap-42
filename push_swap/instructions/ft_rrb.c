@@ -21,7 +21,7 @@ void	ft_rrb(t_stack **stack_b)
 	    stack_b_clone = *stack_b;
 	    while (stack_b_clone->next)
 		    stack_b_clone = stack_b_clone->next;
-	    node = ft_create_node(stack_b_clone->data);
+	    node = ft_create_node(stack_b_clone->data, stack_b_clone->pos);
 	    ft_add_stack_front(stack_b, node);
 	    stack_b_clone->previous->next = NULL;
 	    free(stack_b_clone);

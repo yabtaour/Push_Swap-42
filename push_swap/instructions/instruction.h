@@ -13,9 +13,10 @@
 # define INSTRUCTION_H
 
 typedef struct s_stack{
-    int data;
+    int             data;
     struct s_stack *next;
-    struct s_stack *previous; 
+    struct s_stack *previous;
+    int             pos;
 }     t_stack;
 
 # include <unistd.h>
@@ -30,7 +31,7 @@ void    ft_ss(t_stack **stack_a, t_stack **stack_b);
 void    ft_pb(t_stack **stack_a, t_stack **stack_b);
 void    ft_pa(t_stack **stack_b, t_stack **stack_a);
 void	ft_add_stack_front(t_stack **stack, t_stack *node);
-t_stack *ft_create_node(int	data);
+t_stack *ft_create_node(int	data, int pos);
 void	ft_ra(t_stack **stack_a);
 void	ft_rb(t_stack **stack_b);
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);

@@ -17,15 +17,15 @@ void	ft_add_stack_front(t_stack **stack, t_stack *node)
 
 	if (stack && !*stack)
 	{
-		new_node = ft_create_node(node->data);
+		new_node = ft_create_node(node->data, node->pos);
 		*stack = new_node;
 		(*stack)->next = NULL;
 	}
 	else if (stack && *stack && node)
 	{
-		new_node = ft_create_node(node->data);
-		new_node->next = *stack;
-		(*stack)->previous = new_node;
-		(*stack) = new_node;
+		node = ft_create_node(node->data, node->pos);
+		node->next = *stack;
+		(*stack)->previous = node;
+		(*stack) = node;
 	}
 }

@@ -1,6 +1,6 @@
 #include "instruction.h"
 
-t_stack	*ft_create_node(int	data)
+t_stack	*ft_create_node(int	data, int pos)
 {
 	t_stack	*node;
 
@@ -8,5 +8,6 @@ t_stack	*ft_create_node(int	data)
 	node->next = NULL;
 	node->previous = NULL;
 	node->data = data;
+	node->pos = pos;
 	return (node);
 }

@@ -15,6 +15,7 @@ void    ft_sa(t_stack **stack_a)
 {
     t_stack *stack_a_clone;
     int     data_temp;
+    int     pos_temp;
 
     PRINT
     stack_a_clone = *stack_a;
@@ -23,8 +24,11 @@ void    ft_sa(t_stack **stack_a)
         if (stack_a_clone->next != NULL)
         {
             data_temp = stack_a_clone->data;
+            pos_temp = stack_a_clone->pos;
             stack_a_clone->data = stack_a_clone->next->data;
+            stack_a_clone->pos = stack_a_clone->next->pos;
             stack_a_clone->next->data = data_temp;
+            stack_a_clone->next->pos = pos_temp;
         }
     }
 }

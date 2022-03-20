@@ -22,6 +22,7 @@ t_stack *ft_new_node(int data)
 		node->data = data;
 		node->previous = NULL;
 		node->next = NULL;
+		node->pos = 0;
 	}
 	return (node);
 }

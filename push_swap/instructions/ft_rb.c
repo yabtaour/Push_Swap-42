@@ -19,7 +19,7 @@ void	ft_rb(t_stack **stack_b)
 	if (*stack_b)
 	{
 		stack_b_clone = *stack_b;
-		*stack_b = ft_add_to_stack_back(*stack_b, stack_b_clone->data);
+		*stack_b = ft_add_to_stack_back_pos(*stack_b, stack_b_clone->data, stack_b_clone->pos);
 		*stack_b = (*stack_b)->next;
 		(*stack_b)->previous = NULL;
 		free(stack_b_clone);

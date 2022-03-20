@@ -22,9 +22,7 @@ void    ft_pb(t_stack **stack_a, t_stack **stack_b)
 		if (stack_clone_a->next == NULL)
 			*stack_a = NULL;
 		else
-		{
 			*stack_a = stack_clone_a->next;
-		}
 		ft_add_stack_front(stack_b, stack_clone_a);
 	}
 }
