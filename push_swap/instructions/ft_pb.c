@@ -17,7 +17,8 @@ void    ft_pb(t_stack **stack_a, t_stack **stack_b)
 
 	if (stack_a != NULL)
 	{
-		PRINT
+		//PRINT
+		printf("pb\n");
 		stack_clone_a = *stack_a;
 		if (stack_clone_a->next == NULL)
 			*stack_a = NULL;

@@ -16,6 +16,7 @@ void	ft_rrb(t_stack **stack_b)
 	t_stack	*stack_b_clone;
 	t_stack	*node;
 
+	printf("rrb\n");
     if (*stack_b)
     {
 	    stack_b_clone = *stack_b;

@@ -13,7 +13,8 @@
 
 void    ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-    PRINT
+    //PRINT
+    printf("ss\n");
     ft_sa(stack_a);
     ft_sb(stack_b);
 }

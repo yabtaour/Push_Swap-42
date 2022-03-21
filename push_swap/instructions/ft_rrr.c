@@ -13,6 +13,7 @@
 
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
+	printf("rrr\n");
 	ft_rra(stack_a);
 	ft_rrb(stack_b);
 }

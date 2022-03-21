@@ -68,6 +68,26 @@ int	ft_is_min(t_stack **stack_a)
 	return (0);
 }
 
+int	ft_is_max(t_stack **stack_b)
+{
+	int	max;
+	t_stack	*stack_b_clone;
+
+	stack_b_clone = *stack_b;
+	if (stack_b && *stack_b)
+	{
+		max = (*stack_b)->data;
+		while (stack_b_clone)
+		{
+			if (max < stack_b_clone->data)
+				max = stack_b_clone->data;
+			stack_b_clone = stack_b_clone->next;
+		}
+		return(max);
+	}
+	return (0);
+}
+
 int		ft_find_position(t_stack	**stack_a, int	number)
 {
 	int		i;
@@ -124,68 +144,54 @@ void	ft_sort_more_than3(t_stack	**stack_a,	t_stack **stack_b, int	i)
 		ft_pa(stack_b, stack_a);
 }
 
-// int		ft_check_chunk1(t_stack **stack_a)
-// {
-// 	t_stack	*stack_clone;
-
-// 	stack_clone = *stack_a;
-// 	while (stack_clone)
-// 	{
-// 		if (stack_clone->pos >= 0 && stack_clone->pos <= 19)
-// 			return (1);
-// 		stack_clone = stack_clone->next;
-// 	}
-// 	return(0);
-// }
-
-void	ft_push_chunk1(t_stack **stack_a, t_stack **stack_b)
+void	ft_push_chunk1(t_stack **stack_a, t_stack **stack_b, int start, int end)
 {
 	t_stack	*stack_a_clone;
-	int flag = 0;
-	
 	(void )stack_b;
 	stack_a_clone = *stack_a;
 	while (stack_a_clone)
 	{
-		printf("[%d-%d]->", stack_a_clone->data, stack_a_clone->pos);
-		stack_a_clone = stack_a_clone->next;
-	}
-	printf("\n\n\n\n");
-	stack_a_clone = *stack_a;
-	while (stack_a_clone)
-	{
-		flag  = 0;
-		if (stack_a_clone->pos >= 0 && stack_a_clone->pos <= 19)
+		if (stack_a_clone->pos >= start && stack_a_clone->pos <= end)
 		{
 			while ((*stack_a)->data != stack_a_clone->data)
 			{
-				printf("\n%d\n", stack_a_clone->data);
 				if ((ft_find_position(stack_a, stack_a_clone->data)) >= (ft_stack_size(stack_a) / 2))
 					ft_rra(stack_a);
 				else
 					ft_ra(stack_a);
 			}
-			//ft_pb(stack_a, stack_b);
-			break;
-			flag = 1;
+			ft_pb(stack_a, stack_b);
+			stack_a_clone = *stack_a;
 		}
-		if(flag == 0)
+		else	
 			stack_a_clone = stack_a_clone->next;
 	}
-	stack_a_clone = *stack_a;
-	while (stack_a_clone)
-	{
-		printf("[%d-%d]->", stack_a_clone->data, stack_a_clone->pos);
-		stack_a_clone = stack_a_clone->next;
-	}
-	printf("\n");
 }
 
-void	ft_sort_100(t_stack **stack_a)
+void	ft_sort_100(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*stack_a_clone;
-	t_stack *stack_b;
+	t_stack	*stack_b_clone;
+	int		start;
+	int		max;
 
-	stack_a_clone = *stack_a;
-	ft_push_chunk1(stack_a, &stack_b);
+	start = 0;
+	while (ft_stack_size(stack_a))
+	{
+		ft_push_chunk1(stack_a, stack_b, start, start + 44);
+		start = start + 45;
+	}
+	stack_b_clone = *stack_b;
+	while ((ft_stack_size(stack_b)) != 0)
+	{
+		max = ft_is_max(stack_b);
+		while(stack_b_clone->data != max)
+		{
+			if ((ft_find_position(stack_b, max)) >= (ft_stack_size(stack_b) / 2))
+				ft_rrb(stack_b);
+			else
+				ft_rb(stack_b);
+			stack_b_clone = *stack_b;
+		}
+		ft_pa(stack_b, stack_a);
+	}
 }

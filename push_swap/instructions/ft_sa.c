@@ -17,7 +17,8 @@ void    ft_sa(t_stack **stack_a)
     int     data_temp;
     int     pos_temp;
 
-    PRINT
+    //PRINT
+    printf("sa\n");
     stack_a_clone = *stack_a;
     if (stack_a != NULL)
     {
