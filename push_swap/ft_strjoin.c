@@ -13,8 +13,8 @@
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*str;
 
 	if (!s1)
@@ -35,9 +35,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		str[i] = s1[i];
 	while (s2[j])
 		str[i++] = s2[j++];
-    str[ft_strlen(s1) + ft_strlen(s2)] = ' ';
-	str[ft_strlen(s1) + ft_strlen(s2) + 1] = '\0';
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	free(s1);
 	return (str);
 }
-

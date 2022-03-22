@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int ft_check_sort(t_stack *stack)
+int	ft_check_sort(t_stack *stack)
 {
 	t_stack	*stack_clone;
 

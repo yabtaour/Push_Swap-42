@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
+
 int	ft_check_not_number(char *args)
 {
 	int	i;
@@ -43,7 +44,10 @@ int	ft_check_double(t_stack **stack_a)
 		while (stack_a_clone2)
 		{
 			if (stack_a_clone->data == stack_a_clone2->data)
+			{
+				printf("Error\n");
 				return (0);
+			}
 			stack_a_clone2 = stack_a_clone2->next;
 		}
 		stack_a_clone = stack_a_clone->next;
@@ -77,14 +81,15 @@ int	main(int argc, char *argv[])
 	if (argc > 1)
 	{
 		while (i < argc)
+		{
 			args = ft_strjoin(args, argv[i++]);
+			args = ft_strjoin(args, " ");
+		}
 		if (!ft_check_not_number(args))
 			return (0);
 		arguments = ft_split(args, ' ');
 		ft_create_stack(&stack_a, arguments);
-		if (!ft_check_double(&stack_a))
-			return (0);
-		if (!ft_check_sorted(&stack_a))
+		if (!ft_check_double(&stack_a) || !ft_check_sorted(&stack_a))
 			return (0);
 		ft_sort(&stack_a);
 	}

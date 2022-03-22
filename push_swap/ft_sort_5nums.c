@@ -46,22 +46,7 @@ int	ft_stack_size(t_stack	**stack_a)
 	return (i);
 }
 
-int	ft_find_position(t_stack **stack_a, int number)
-{
-	int		i;
-	t_stack	*stack_a_clone;
-
-	stack_a_clone = *stack_a;
-	i = 0;
-	while (stack_a_clone->data != number)
-	{
-		stack_a_clone = stack_a_clone->next;
-		i++;
-	}
-	return (i);
-}
-
-void	ft_sort_more_than3(t_stack **stack_a, t_stack **stack_b, int i)
+void	ft_sort_5nums(t_stack **stack_a, t_stack **stack_b, int i)
 {
 	t_stack	*stack_a_clone;
 	int		min;
@@ -69,20 +54,19 @@ void	ft_sort_more_than3(t_stack **stack_a, t_stack **stack_b, int i)
 
 	i = 0;
 	stack_a_clone = *stack_a;
-	min = ft_is_min(stack_a);
 	while ((ft_stack_size(stack_a)) != 3)
 	{
+		min = ft_is_min(stack_a);
 		while (stack_a_clone->data != min)
 		{
 			pos = ft_find_position(stack_a, min);
-			if (pos >= (ft_stack_size(stack_a) / 2))
+			if (ft_find_position(stack_a, min) >= (ft_stack_size(stack_a) / 2))
 				print_rra(stack_a);
 			else
 				print_ra(stack_a);
 			stack_a_clone = *stack_a;
 		}
 		print_pb(stack_a, stack_b);
-		min = ft_is_min(stack_a);
 	}
 	ft_sort_3nums(stack_a);
 	while (ft_stack_size(stack_b) != 0)

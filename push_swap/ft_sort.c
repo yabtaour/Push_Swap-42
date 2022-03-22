@@ -30,7 +30,7 @@ void	ft_sort(t_stack **stack_a)
 	else if (i == 3)
 		ft_sort_3nums(stack_a);
 	else if (i > 3 && i < 30)
-		ft_sort_more_than3(stack_a, &stack_b, i);
+		ft_sort_5nums(stack_a, &stack_b, i);
 	else if (i >= 30 && i < 200)
 		ft_sort_100(stack_a, &stack_b, 5);
 	else

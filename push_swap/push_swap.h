@@ -28,7 +28,10 @@ int     ft_check_sort(t_stack *stack);
 void    ft_sort(t_stack **stack_a);
 void    ft_sort_3nums(t_stack **stack_a);
 void	ft_sort_2nums(t_stack **stack_a);
-void	ft_sort_more_than3(t_stack	**stack_a, t_stack **stack_b, int i);
+void	ft_sort_5nums(t_stack **stack_a, t_stack **stack_b, int i);
 void	ft_sort_100(t_stack **stack_a, t_stack **stack_b, int div);
+int     ft_stack_size(t_stack	**stack_a);
+int     ft_find_position(t_stack **stack_a, int number);
+int     ft_find_po(t_stack **stack, int pos);
 
 #endif

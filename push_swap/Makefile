@@ -7,9 +7,11 @@ FLAGS = -Wall -Werror -Wextra -g
 SRC = main.c ft_calloc.c ft_split.c ft_strjoin.c\
 		ft_strlen.c ft_substr.c ft_new_node.c\
 		ft_add_to_stack.c ft_create_stack.c\
-		ft_check_imposter.c ft_check_sort.c\
+		ft_check_sort.c ft_find_max.c\
 		ft_sort.c ft_sort_3nums.c\
-		ft_sort_2nums.c\
+		ft_sort_2nums.c ft_find_position.c\
+		ft_sort_100.c ft_sort_5nums.c\
+
 
 SRC_IN = ./instructions/ft_sa.c\
 			./instructions/ft_sb.c\
