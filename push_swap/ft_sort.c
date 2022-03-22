@@ -15,6 +15,7 @@ void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
 	t_stack	*stack_b;
+	//t_stack *stack_b_clone;
 	int		i;
 
 	i = 0;
@@ -26,13 +27,29 @@ void	ft_sort(t_stack **stack_a)
 		stack_a_clone = stack_a_clone->next;
 	}
 	if (i == 2)
+	{
 		ft_sort_2nums(stack_a);
+	}
 	else if (i == 3)
+	{
 		ft_sort_3nums(stack_a);
+	}
 	else if (i > 3 && i < 30)
 		ft_sort_5nums(stack_a, &stack_b, i);
 	else if (i >= 30 && i < 200)
 		ft_sort_100(stack_a, &stack_b, 5);
 	else
 		ft_sort_100(stack_a, &stack_b, 9);
+	while ((*stack_a)->next)
+	{
+		(*stack_a) = (*stack_a)->next;
+		free((*stack_a)->previous);
+	}
+	free((*stack_a)->next);
+	system("leaks push_swap");
+	// while (stack_b->next)
+	// {
+	// 	stack_b = stack_b->next;
+	// 	free(stack_b->previous);
+	// }
 }

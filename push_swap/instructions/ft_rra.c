@@ -29,6 +29,7 @@ void	ft_rra(t_stack **stack_a)
 			stack_a_clone = stack_a_clone->next;
 		node = ft_create_node(stack_a_clone->data, stack_a_clone->pos);
 		ft_add_stack_front(stack_a, node);
+		free(stack_a_clone);
 		stack_a_clone->previous->next = NULL;
 	}
 }

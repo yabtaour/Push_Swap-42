@@ -27,6 +27,7 @@ void	ft_ra(t_stack **stack_a)
 		stack_a_clone = *stack_a;
 		*stack_a = ft_add_to_stack_back_pos(*stack_a, stack_a_clone->data, stack_a_clone->pos);
 		*stack_a = (*stack_a)->next;
+		free((*stack_a)->previous);
 		(*stack_a)->previous = NULL;
 	}
 }

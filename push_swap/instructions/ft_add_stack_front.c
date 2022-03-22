@@ -20,12 +20,14 @@ void	ft_add_stack_front(t_stack **stack, t_stack *node)
 		new_node = ft_create_node(node->data, node->pos);
 		*stack = new_node;
 		(*stack)->next = NULL;
+		free(node);
 	}
 	else if (stack && *stack && node)
 	{
-		node = ft_create_node(node->data, node->pos);
-		node->next = *stack;
-		(*stack)->previous = node;
-		(*stack) = node;
+		new_node = ft_create_node(node->data, node->pos);
+		new_node->next = *stack;
+		(*stack)->previous = new_node;
+		(*stack) = new_node;
+		free(node);
 	}
 }
