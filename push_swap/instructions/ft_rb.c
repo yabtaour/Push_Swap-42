@@ -11,18 +11,22 @@
 /* ************************************************************************** */
 #include "instruction.h"
 
+
+void	print_rb(t_stack **stack_b)
+{
+	printf("rb\n");
+	ft_rb(stack_b);
+}
+
 void	ft_rb(t_stack **stack_b)
 {
 	t_stack	*stack_b_clone;
 
-	//PRINT
-	printf("rb\n");
 	if (*stack_b)
 	{
 		stack_b_clone = *stack_b;
 		*stack_b = ft_add_to_stack_back_pos(*stack_b, stack_b_clone->data, stack_b_clone->pos);
 		*stack_b = (*stack_b)->next;
 		(*stack_b)->previous = NULL;
-		free(stack_b_clone);
 	}
 }

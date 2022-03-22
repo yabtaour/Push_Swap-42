@@ -11,13 +11,17 @@
 /* ************************************************************************** */
 #include "instruction.h"
 
+void	print_rra(t_stack **stack_a)
+{
+	printf("rra\n");
+	ft_rra(stack_a);
+}
+
 void	ft_rra(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
 	t_stack	*node;
 
-	//PRINT
-	printf("rra\n");
 	if (*stack_a)
 	{
 		stack_a_clone = *stack_a;
@@ -26,6 +30,5 @@ void	ft_rra(t_stack **stack_a)
 		node = ft_create_node(stack_a_clone->data, stack_a_clone->pos);
 		ft_add_stack_front(stack_a, node);
 		stack_a_clone->previous->next = NULL;
-		free(stack_a_clone);
 	}
 }

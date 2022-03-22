@@ -11,6 +11,35 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
+int	ft_atoi(const char	*str)
+{
+	int	i;
+	int	sign;
+	int	result;
+
+	sign = 1;
+	result = 0;
+	i = 0;
+	while (str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v'
+		|| str[i] == ' ' || str[i] == '\f')
+		i++;
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
+	{
+		sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
+}
+
+
 void	ft_create_stack(t_stack **stack_a, char **arguments)
 {
 	int		i;
@@ -20,7 +49,7 @@ void	ft_create_stack(t_stack **stack_a, char **arguments)
 	i  = 0;
 	while (arguments[i])
 	{
-		*stack_a = ft_add_to_stack_back(*stack_a, atoi(arguments[i]));
+		*stack_a = ft_add_to_stack_back(*stack_a, ft_atoi(arguments[i]));
 		i++;
 	}
 	stack_clone = *stack_a;

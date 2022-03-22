@@ -17,7 +17,7 @@ void	ft_sort_2nums(t_stack **stack_a)
 
 	stack_a_clone = *stack_a;
 	if (stack_a_clone->data > stack_a_clone->next->data)
-		ft_sa(stack_a);
+		print_sa(stack_a);
 }
 
 void	ft_sort_3nums(t_stack **stack_a)
@@ -27,25 +27,25 @@ void	ft_sort_3nums(t_stack **stack_a)
 	stack_a_clone = *stack_a;
 	if (stack_a_clone->next->data < stack_a_clone->data
 		&& stack_a_clone->data < stack_a_clone->next->next->data)
-		ft_sa(stack_a);
+		print_sa(stack_a);
 	else if (stack_a_clone->data > stack_a_clone->next->data
 		&& stack_a_clone->next->data > stack_a_clone->next->next->data)
 	{
-		ft_sa(stack_a);
-		ft_rra(stack_a);
+		print_sa(stack_a);
+		print_rra(stack_a);
 	}
 	else if (stack_a_clone->data > stack_a_clone->next->data
 		&& stack_a_clone->data > stack_a_clone->next->next->data)
-		ft_ra(stack_a);
+		print_ra(stack_a);
 	else if (stack_a_clone->next->next->data > stack_a_clone->data
 		&& stack_a_clone->next->data > stack_a_clone->next->next->data)
 	{
-		ft_sa(stack_a);
-		ft_ra(stack_a);
+		print_sa(stack_a);
+		print_ra(stack_a);
 	}
 	else if (stack_a_clone->next->data > stack_a_clone->data
 		&& stack_a_clone->data > stack_a_clone->next->next->data)
-		ft_rra(stack_a);
+		print_rra(stack_a);
 }
 
 int	ft_is_min(t_stack **stack_a)
@@ -74,18 +74,30 @@ int	ft_is_max(t_stack **stack_b)
 	t_stack	*stack_b_clone;
 
 	stack_b_clone = *stack_b;
-	if (stack_b && *stack_b)
+	max = (*stack_b)->data;
+	while (stack_b_clone)
 	{
-		max = (*stack_b)->data;
-		while (stack_b_clone)
-		{
-			if (max < stack_b_clone->data)
-				max = stack_b_clone->data;
-			stack_b_clone = stack_b_clone->next;
-		}
-		return(max);
+		if (max < stack_b_clone->data)
+			max = stack_b_clone->data;
+		stack_b_clone = stack_b_clone->next;
 	}
-	return (0);
+	return(max);
+}
+
+int	ft_is_second_max(t_stack **stack_b, int max)
+{
+	int		max1;
+	t_stack	*stack_b_clone;
+
+	stack_b_clone = *stack_b;
+	max1 = (*stack_b)->data;
+	while (stack_b_clone)
+	{
+		if (max1 < stack_b_clone->data && stack_b_clone->data != max)
+			max1 = stack_b_clone->data;
+		stack_b_clone = stack_b_clone->next;
+	}
+	return (max1);
 }
 
 int		ft_find_position(t_stack	**stack_a, int	number)
@@ -131,67 +143,139 @@ void	ft_sort_more_than3(t_stack	**stack_a,	t_stack **stack_b, int	i)
 		while(stack_a_clone->data != min)
 		{
 			if ((ft_find_position(stack_a, min)) >= (ft_stack_size(stack_a) / 2))
-				ft_rra(stack_a);
+				print_rra(stack_a);
 			else
-				ft_ra(stack_a);
+				print_ra(stack_a);
 			stack_a_clone = *stack_a;
 		}
-		ft_pb(stack_a, stack_b);
+		print_pb(stack_a, stack_b);
 		min = ft_is_min(stack_a);
 	}
 	ft_sort_3nums(stack_a);
 	while (ft_stack_size(stack_b) != 0)
-		ft_pa(stack_b, stack_a);
+		print_pa(stack_b, stack_a);
 }
 
-void	ft_push_chunk1(t_stack **stack_a, t_stack **stack_b, int start, int end)
+void	ft_push_chunk2(t_stack **stack_a, t_stack **stack_b, int end, int chunk)
+{
+	int count;
+
+	count = 0;
+	while (*stack_a && count < chunk)
+	{
+		if ((*stack_a)->pos < end)
+		{
+			print_pb(stack_a, stack_b);
+			if ((*stack_b)->pos > end - (chunk / 2))
+			{
+				if (*stack_a && (*stack_a)->pos >= end)
+					print_rr(stack_a, stack_b);
+				else
+					print_rb(stack_b);
+			}
+			count++;
+			continue ;
+		}
+		print_ra(stack_a);
+	}
+}
+
+
+
+// void	ft_push_chunk1(t_stack **stack_a, t_stack **stack_b, int start, int end)
+// {
+// 	t_stack	*stack_a_clone;
+// 	(void )stack_b;
+// 	stack_a_clone = *stack_a;
+// 	while (stack_a_clone)
+// 	{
+// 		if (stack_a_clone->pos >= start && stack_a_clone->pos < end)
+// 		{
+// 			while ((*stack_a)->data != stack_a_clone->data)
+// 			{
+// 				if ((ft_find_position(stack_a, stack_a_clone->data)) >= (ft_stack_size(stack_a) / 2))
+// 					print_rra(stack_a);
+// 				else
+// 					print_ra(stack_a);
+// 			}
+// 			print_pb(stack_a, stack_b);
+// 			if (stack_a_clone->pos <= end / 2)
+// 				print_rb(stack_b);
+// 			stack_a_clone = *stack_a;
+// 		}
+// 		else	
+// 			stack_a_clone = stack_a_clone->next;
+// 	}
+// }
+
+int	ft_find_po(t_stack **stack, int pos)
 {
 	t_stack	*stack_a_clone;
-	(void )stack_b;
-	stack_a_clone = *stack_a;
-	while (stack_a_clone)
+	int		i = 0;
+
+	stack_a_clone = *stack;
+	while (stack_a_clone->pos != pos)
 	{
-		if (stack_a_clone->pos >= start && stack_a_clone->pos <= end)
-		{
-			while ((*stack_a)->data != stack_a_clone->data)
-			{
-				if ((ft_find_position(stack_a, stack_a_clone->data)) >= (ft_stack_size(stack_a) / 2))
-					ft_rra(stack_a);
-				else
-					ft_ra(stack_a);
-			}
-			ft_pb(stack_a, stack_b);
-			stack_a_clone = *stack_a;
-		}
-		else	
-			stack_a_clone = stack_a_clone->next;
+		i++;
+		stack_a_clone = stack_a_clone->next;
+	}
+	return (i);
+}
+
+int		ft_compare_top_tail(t_stack **stack, int pos)
+{
+	int		top = 0;
+	int		tail = 0;
+
+	top = ft_find_po(stack, pos);
+	tail = ft_stack_size(stack) - top;
+	if (top >= tail)
+		return (tail);
+	else
+		return (top);
+}
+
+void take_to_top(t_stack **stack, int pos)
+{
+	while((*stack)->pos != pos)
+	{
+		if ((ft_find_po(stack, pos)) >= (ft_stack_size(stack) / 2))
+			print_rrb(stack);
+		else
+			print_rb(stack);
 	}
 }
 
-void	ft_sort_100(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort_100(t_stack **stack_a, t_stack **stack_b, int div)
 {
-	t_stack	*stack_b_clone;
-	int		start;
-	int		max;
+	int		end;
+	int		size;
+	int		ssize;
 
-	start = 0;
-	while (ft_stack_size(stack_a))
+	ssize = ft_stack_size(stack_a);
+	size = ssize / div;
+	end = 0;
+	while (*stack_a)
 	{
-		ft_push_chunk1(stack_a, stack_b, start, start + 44);
-		start = start + 45;
+		end += size;
+		ft_push_chunk2(stack_a, stack_b, end, size);
 	}
-	stack_b_clone = *stack_b;
-	while ((ft_stack_size(stack_b)) != 0)
+	ssize--; // smart move 0
+	while (*stack_b && ssize >= 0)
 	{
-		max = ft_is_max(stack_b);
-		while(stack_b_clone->data != max)
+		if (ssize == 0 || ft_compare_top_tail(stack_b, ssize) < ft_compare_top_tail(stack_b, ssize - 1))
 		{
-			if ((ft_find_position(stack_b, max)) >= (ft_stack_size(stack_b) / 2))
-				ft_rrb(stack_b);
-			else
-				ft_rb(stack_b);
-			stack_b_clone = *stack_b;
+			take_to_top(stack_b, ssize--); // smart move 1
+			print_pa(stack_b, stack_a);
 		}
-		ft_pa(stack_b, stack_a);
+		else
+		{
+			take_to_top(stack_b, ssize - 1);
+			print_pa(stack_b, stack_a);
+			take_to_top(stack_b, ssize);
+			print_pa(stack_b, stack_a);
+			print_sa(stack_a);
+			ssize -= 2;
+		}
 	}
 }

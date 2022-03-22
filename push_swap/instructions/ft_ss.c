@@ -11,10 +11,14 @@
 /* ************************************************************************** */
 #include "instruction.h"
 
+void	print_ss(t_stack **stack_a, t_stack **stack_b)
+{
+	printf("ss\n");
+	ft_ss(stack_a, stack_b);
+}
+
 void    ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-    //PRINT
-    printf("ss\n");
     ft_sa(stack_a);
     ft_sb(stack_b);
 }

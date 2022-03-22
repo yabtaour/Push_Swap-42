@@ -16,13 +16,10 @@ t_stack *ft_new_node(int data)
 	t_stack *node;
 
 	node = NULL;
-	if (data)
-	{
-		node = malloc(sizeof(t_stack));
-		node->data = data;
-		node->previous = NULL;
-		node->next = NULL;
-		node->pos = 0;
-	}
+	node = malloc(sizeof(t_stack));
+	node->data = data;
+	node->previous = NULL;
+	node->next = NULL;
+	node->pos = 0;
 	return (node);
 }

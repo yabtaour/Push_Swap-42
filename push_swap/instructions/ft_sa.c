@@ -11,14 +11,18 @@
 /* ************************************************************************** */
 #include "instruction.h"
 
+void	print_sa(t_stack **stack_a)
+{
+	printf("sa\n");
+	ft_sa(stack_a);
+}
+
 void    ft_sa(t_stack **stack_a)
 {
     t_stack *stack_a_clone;
     int     data_temp;
     int     pos_temp;
 
-    //PRINT
-    printf("sa\n");
     stack_a_clone = *stack_a;
     if (stack_a != NULL)
     {
