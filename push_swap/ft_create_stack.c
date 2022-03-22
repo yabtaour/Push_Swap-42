@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	ft_atoi(const char	*str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
@@ -39,14 +39,13 @@ int	ft_atoi(const char	*str)
 	return (result * sign);
 }
 
-
 void	ft_create_stack(t_stack **stack_a, char **arguments)
 {
 	int		i;
 	t_stack	*stack_clone;
-	t_stack *stack_clone2;
+	t_stack	*stack_clone2;
 
-	i  = 0;
+	i = 0;
 	while (arguments[i])
 	{
 		*stack_a = ft_add_to_stack_back(*stack_a, ft_atoi(arguments[i]));

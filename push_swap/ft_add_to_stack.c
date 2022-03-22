@@ -13,8 +13,8 @@
 
 t_stack	*ft_add_to_stack_back(t_stack *stack, int data)
 {
-	t_stack *node;
-	t_stack *stack_clone;
+	t_stack	*node;
+	t_stack	*stack_clone;
 
 	node = ft_new_node(data);
 	if (stack == NULL)
@@ -30,8 +30,8 @@ t_stack	*ft_add_to_stack_back(t_stack *stack, int data)
 
 t_stack	*ft_add_to_stack_back_pos(t_stack *stack, int data, int pos)
 {
-	t_stack *node;
-	t_stack *stack_clone;
+	t_stack	*node;
+	t_stack	*stack_clone;
 
 	node = ft_new_node(data);
 	if (stack == NULL)

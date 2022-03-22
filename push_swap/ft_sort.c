@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void    ft_sort(t_stack **stack_a)
+void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
 	t_stack	*stack_b;
@@ -34,12 +34,5 @@ void    ft_sort(t_stack **stack_a)
 	else if (i >= 30 && i < 200)
 		ft_sort_100(stack_a, &stack_b, 5);
 	else
-		ft_sort_100(stack_a, &stack_b,9);
-
-	// stack_a_clone = *stack_a;
-	// while (stack_a_clone)
-	// {
-	// 	printf("[%d-%d]->", stack_a_clone->data, stack_a_clone->pos);
-	// 	stack_a_clone = stack_a_clone->next;
-	// }
+		ft_sort_100(stack_a, &stack_b, 9);
 }

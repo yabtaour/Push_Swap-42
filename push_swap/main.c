@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-
 int	ft_check_not_number(char *args)
 {
 	int	i;
@@ -19,8 +18,8 @@ int	ft_check_not_number(char *args)
 	i = 0;
 	while (args[i])
 	{
-		if ((args[i] > '9' || args[i] < '0') 
-		&& args[i] != '+' && args[i] != ' ' && args[i] != '-')
+		if ((args[i] > '9' || args[i] < '0')
+			&& args[i] != '+' && args[i] != ' ' && args[i] != '-')
 			return (0);
 		if (args[i] == '-' || args[i] == '+')
 		{
@@ -47,7 +46,7 @@ int	ft_check_double(t_stack **stack_a)
 				return (0);
 			stack_a_clone2 = stack_a_clone2->next;
 		}
-		stack_a_clone = stack_a_clone->next;	
+		stack_a_clone = stack_a_clone->next;
 	}
 	return (1);
 }
@@ -57,7 +56,7 @@ int	ft_check_sorted(t_stack **stack_a)
 	t_stack	*stack_a_clone;
 
 	stack_a_clone = *stack_a;
-	while(stack_a_clone->next)
+	while (stack_a_clone->next)
 	{
 		if (stack_a_clone->data > stack_a_clone->next->data)
 			return (1);
@@ -66,7 +65,7 @@ int	ft_check_sorted(t_stack **stack_a)
 	return (0);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	char	**arguments;
 	int		i;
@@ -88,11 +87,6 @@ int main(int argc, char *argv[])
 		if (!ft_check_sorted(&stack_a))
 			return (0);
 		ft_sort(&stack_a);
-		while (stack_a)
-		{
-			printf("[%d-%d]->", stack_a->data, stack_a->pos);
-			stack_a = stack_a->next;
-		}	
 	}
 	return (0);
 }

@@ -11,15 +11,6 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	ft_sort_2nums(t_stack **stack_a)
-{
-	t_stack	*stack_a_clone;
-
-	stack_a_clone = *stack_a;
-	if (stack_a_clone->data > stack_a_clone->next->data)
-		print_sa(stack_a);
-}
-
 void	ft_sort_3nums(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
@@ -46,26 +37,6 @@ void	ft_sort_3nums(t_stack **stack_a)
 	else if (stack_a_clone->next->data > stack_a_clone->data
 		&& stack_a_clone->data > stack_a_clone->next->next->data)
 		print_rra(stack_a);
-}
-
-int	ft_is_min(t_stack **stack_a)
-{
-	int	min;
-	t_stack	*stack_a_clone;
-
-	stack_a_clone = *stack_a;
-	if (stack_a && *stack_a)
-	{
-		min = (*stack_a)->data;
-		while (stack_a_clone)
-		{
-			if (min > stack_a_clone->data)
-				min = stack_a_clone->data;
-			stack_a_clone = stack_a_clone->next;
-		}
-		return(min);
-	}
-	return (0);
 }
 
 int	ft_is_max(t_stack **stack_b)
@@ -100,62 +71,6 @@ int	ft_is_second_max(t_stack **stack_b, int max)
 	return (max1);
 }
 
-int		ft_find_position(t_stack	**stack_a, int	number)
-{
-	int		i;
-	t_stack	*stack_a_clone;
-
-	stack_a_clone = *stack_a;
-	i = 0;
-	while (stack_a_clone->data != number)
-	{
-		stack_a_clone = stack_a_clone->next;
-		i++;
-	}
-	return(i);	
-}
-
-int		ft_stack_size(t_stack	**stack_a)
-{
-	int		i;
-	t_stack	*stack_a_clone;
-
-	stack_a_clone = *stack_a;
-	i = 0;
-	while (stack_a_clone)
-	{
-		i++;
-		stack_a_clone = stack_a_clone->next;
-	}
-	return(i);
-}
-
-void	ft_sort_more_than3(t_stack	**stack_a,	t_stack **stack_b, int	i)
-{
-	t_stack	*stack_a_clone;
-	int		min;
-
-	i = 0;
-	stack_a_clone = *stack_a;
-	min = ft_is_min(stack_a);
-	while ((ft_stack_size(stack_a)) != 3)
-	{
-		while(stack_a_clone->data != min)
-		{
-			if ((ft_find_position(stack_a, min)) >= (ft_stack_size(stack_a) / 2))
-				print_rra(stack_a);
-			else
-				print_ra(stack_a);
-			stack_a_clone = *stack_a;
-		}
-		print_pb(stack_a, stack_b);
-		min = ft_is_min(stack_a);
-	}
-	ft_sort_3nums(stack_a);
-	while (ft_stack_size(stack_b) != 0)
-		print_pa(stack_b, stack_a);
-}
-
 void	ft_push_chunk2(t_stack **stack_a, t_stack **stack_b, int end, int chunk)
 {
 	int count;
@@ -179,34 +94,6 @@ void	ft_push_chunk2(t_stack **stack_a, t_stack **stack_b, int end, int chunk)
 		print_ra(stack_a);
 	}
 }
-
-
-
-// void	ft_push_chunk1(t_stack **stack_a, t_stack **stack_b, int start, int end)
-// {
-// 	t_stack	*stack_a_clone;
-// 	(void )stack_b;
-// 	stack_a_clone = *stack_a;
-// 	while (stack_a_clone)
-// 	{
-// 		if (stack_a_clone->pos >= start && stack_a_clone->pos < end)
-// 		{
-// 			while ((*stack_a)->data != stack_a_clone->data)
-// 			{
-// 				if ((ft_find_position(stack_a, stack_a_clone->data)) >= (ft_stack_size(stack_a) / 2))
-// 					print_rra(stack_a);
-// 				else
-// 					print_ra(stack_a);
-// 			}
-// 			print_pb(stack_a, stack_b);
-// 			if (stack_a_clone->pos <= end / 2)
-// 				print_rb(stack_b);
-// 			stack_a_clone = *stack_a;
-// 		}
-// 		else	
-// 			stack_a_clone = stack_a_clone->next;
-// 	}
-// }
 
 int	ft_find_po(t_stack **stack, int pos)
 {

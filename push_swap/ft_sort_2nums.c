@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_node.c                                      :+:      :+:    :+:   */
+/*   ft_sort_2nums.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 17:19:21 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 17:19:23 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/22 07:21:02 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/22 07:21:03 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-t_stack	*ft_new_node(int data)
+void	ft_sort_2nums(t_stack **stack_a)
 {
-	t_stack	*node;
+	t_stack	*stack_a_clone;
 
-	node = NULL;
-	node = malloc(sizeof(t_stack));
-	node->data = data;
-	node->previous = NULL;
-	node->next = NULL;
-	node->pos = 0;
-	return (node);
+	stack_a_clone = *stack_a;
+	if (stack_a_clone->data > stack_a_clone->next->data)
+		print_sa(stack_a);
 }
