@@ -20,11 +20,17 @@ int	ft_check_not_number(char *args)
 	{
 		if ((args[i] > '9' || args[i] < '0')
 			&& args[i] != '+' && args[i] != ' ' && args[i] != '-')
+		{
+			printf("Error\n");
 			return (0);
+		}
 		if (args[i] == '-' || args[i] == '+')
 		{
 			if (args[i + 1] == '+' || args[i + 1] == '-' || args[i + 2] == '\0')
+			{
+				printf("Error\n");
 				return (0);
+			}
 		}
 		i++;
 	}
@@ -96,6 +102,8 @@ int	main(int argc, char *argv[])
 		if (!ft_check_not_number(args))
 			return (0);
 		arguments = ft_split(args, ' ');
+		if (!ft_check_int(arguments))
+			return (0);
 		free(args);
 		ft_create_stack(&stack_a, arguments);
 		free_split(arguments);

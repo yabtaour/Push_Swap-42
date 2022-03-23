@@ -17,10 +17,10 @@ void	print_sb(t_stack **stack_b)
 	ft_sb(stack_b);
 }
 
-void    ft_sb(t_stack **stack_b)
+void	ft_sb(t_stack **stack_b)
 {
-	t_stack *stack_b_clone;
-	int     data_temp;
+	t_stack	*stack_b_clone;
+	int		data_temp;
 	int		pos_temp;
 
 	stack_b_clone = *stack_b;

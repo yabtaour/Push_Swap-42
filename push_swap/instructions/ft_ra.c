@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "instruction.h"
 
-
 void	print_ra(t_stack **stack_a)
 {
 	printf("ra\n");
@@ -21,11 +20,15 @@ void	print_ra(t_stack **stack_a)
 void	ft_ra(t_stack **stack_a)
 {
 	t_stack	*stack_a_clone;
+	int		data;
+	int		pos;
 
 	if (*stack_a)
 	{
 		stack_a_clone = *stack_a;
-		*stack_a = ft_add_to_stack_back_pos(*stack_a, stack_a_clone->data, stack_a_clone->pos);
+		data = stack_a_clone->data;
+		pos = stack_a_clone->pos;
+		*stack_a = ft_add_to_stack_back_pos(*stack_a, data, pos);
 		*stack_a = (*stack_a)->next;
 		free((*stack_a)->previous);
 		(*stack_a)->previous = NULL;

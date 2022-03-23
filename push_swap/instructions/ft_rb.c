@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "instruction.h"
 
-
 void	print_rb(t_stack **stack_b)
 {
 	printf("rb\n");
@@ -21,11 +20,15 @@ void	print_rb(t_stack **stack_b)
 void	ft_rb(t_stack **stack_b)
 {
 	t_stack	*stack_b_clone;
+	int		data;
+	int		pos;
 
 	if (*stack_b)
 	{
 		stack_b_clone = *stack_b;
-		*stack_b = ft_add_to_stack_back_pos(*stack_b, stack_b_clone->data, stack_b_clone->pos);
+		data = stack_b_clone->data;
+		pos = stack_b_clone->pos;
+		*stack_b = ft_add_to_stack_back_pos(*stack_b, data, pos);
 		*stack_b = (*stack_b)->next;
 		free((*stack_b)->previous);
 		(*stack_b)->previous = NULL;

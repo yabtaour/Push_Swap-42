@@ -17,9 +17,9 @@ void	print_pb(t_stack **stack_a, t_stack **stack_b)
 	ft_pb(stack_a, stack_b);
 }
 
-void    ft_pb(t_stack **stack_a, t_stack **stack_b)
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *stack_clone_a;
+	t_stack	*stack_clone_a;
 
 	if (stack_a != NULL)
 	{

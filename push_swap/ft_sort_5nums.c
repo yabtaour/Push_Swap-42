@@ -50,7 +50,6 @@ void	ft_sort_5nums(t_stack **stack_a, t_stack **stack_b, int i)
 {
 	t_stack	*stack_a_clone;
 	int		min;
-	int		pos;
 
 	i = 0;
 	stack_a_clone = *stack_a;
@@ -59,7 +58,6 @@ void	ft_sort_5nums(t_stack **stack_a, t_stack **stack_b, int i)
 		min = ft_is_min(stack_a);
 		while (stack_a_clone->data != min)
 		{
-			pos = ft_find_position(stack_a, min);
 			if (ft_find_position(stack_a, min) >= (ft_stack_size(stack_a) / 2))
 				print_rra(stack_a);
 			else

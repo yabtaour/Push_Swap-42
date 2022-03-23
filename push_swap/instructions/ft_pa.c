@@ -17,9 +17,9 @@ void	print_pa(t_stack **stack_b, t_stack **stack_a)
 	ft_pa(stack_b, stack_a);
 }
 
-void    ft_pa(t_stack **stack_b, t_stack **stack_a)
+void	ft_pa(t_stack **stack_b, t_stack **stack_a)
 {
-	t_stack *stack_clone_b;
+	t_stack	*stack_clone_b;
 
 	if (stack_b != NULL)
 	{
