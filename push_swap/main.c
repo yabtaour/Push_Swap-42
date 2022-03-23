@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-
 int	ft_check_not_number(char *args)
 {
 	int	i;
@@ -69,22 +68,17 @@ int	ft_check_sorted(t_stack **stack_a)
 	return (0);
 }
 
-void	free_split(char **arguments)
+void	ft_free(t_stack **stack_a)
 {
-	int	i;
+	t_stack	*stack_a_clone;
 
-	i = 0;
-	while (arguments[i])
+	stack_a_clone = *stack_a;
+	while ((*stack_a)->next)
 	{
-		free(arguments[i]);
-		i++;
+		stack_a_clone = (*stack_a)->next;
+		free(*(stack_a));
+		*stack_a = stack_a_clone;
 	}
-	free(arguments);
-}
-
-void f(void)
-{
-	system("leaks push_swap");
 }
 
 int	main(int argc, char *argv[])
@@ -93,17 +87,12 @@ int	main(int argc, char *argv[])
 	int		i;
 	char	*args;
 	t_stack	*stack_a;
-	//t_stack *stack_a_clone;
 
 	stack_a = NULL;
 	i = 1;
 	if (argc > 1)
 	{
-		while (i < argc)
-		{
-			args = ft_strjoin(args, argv[i++]);
-			args = ft_strjoin(args, " ");
-		}
+		args = ft_join_args(argv, argc);
 		if (!ft_check_not_number(args))
 			return (0);
 		arguments = ft_split(args, ' ');
@@ -113,6 +102,7 @@ int	main(int argc, char *argv[])
 		if (!ft_check_double(&stack_a) || !ft_check_sorted(&stack_a))
 			return (0);
 		ft_sort(&stack_a);
+		ft_free(&stack_a);
 	}
 	return (0);
 }

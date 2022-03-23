@@ -43,6 +43,19 @@ static char	**ft_free_tab(char **str, int i)
 	return (str);
 }
 
+void	free_split(char **arguments)
+{
+	int	i;
+
+	i = 0;
+	while (arguments[i])
+	{
+		free(arguments[i]);
+		i++;
+	}
+	free(arguments);
+}
+
 static char	**ft_allocation(char const *s, char c)
 {
 	char	**ptr;

@@ -33,5 +33,7 @@ void	ft_sort_100(t_stack **stack_a, t_stack **stack_b, int div);
 int     ft_stack_size(t_stack	**stack_a);
 int     ft_find_position(t_stack **stack_a, int number);
 int     ft_find_po(t_stack **stack, int pos);
+void	free_split(char **arguments);
+char	*ft_join_args(char *argv[], int argc);
 
 #endif

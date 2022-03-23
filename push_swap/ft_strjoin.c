@@ -11,6 +11,21 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
+char	*ft_join_args(char *argv[], int argc)
+{
+	char	*args;
+	int		i;
+
+	i = 1;
+	args = NULL;
+	while (i < argc)
+	{
+		args = ft_strjoin(args, argv[i++]);
+		args = ft_strjoin(args, " ");
+	}
+	return (args);
+}
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
