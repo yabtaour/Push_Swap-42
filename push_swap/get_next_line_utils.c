@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_node.c                                      :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 17:19:21 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 17:19:23 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/23 21:54:52 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/23 21:54:53 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-t_stack	*ft_new_node(int data)
+char    *ft_strchr(char *str, int c)
 {
-	t_stack	*node;
-
-	node = NULL;
-	node = malloc(sizeof(t_stack));
-	node->data = data;
-	node->previous = NULL;
-	node->next = NULL;
-	node->pos = 0;
-	return (node);
+	if (!str)
+		return (NULL);
+	while (*str != c)
+	{
+		if (*str == '\0')
+			return (NULL);
+		str++;
+	}
+	return ((char *)str);
 }

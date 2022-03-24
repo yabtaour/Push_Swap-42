@@ -20,9 +20,6 @@ void	*ft_calloc(int count, int size);
 int		ft_strlen(char *str);
 char	**ft_split(char *s, char c);
 void	ft_create_stack(t_stack **stack_a, char **arguments);
-t_stack	*ft_new_node(int data);
-t_stack	*ft_add_to_stack_back(t_stack *stack, int data);
-t_stack	*ft_add_to_stack_back_pos(t_stack *stack, int data, int pos);
 int		ft_check_imposter(char *args);
 int		ft_check_sort(t_stack *stack);
 void	ft_sort(t_stack **stack_a);
@@ -37,5 +34,11 @@ void	free_split(char **arguments);
 char	*ft_join_args(char *argv[], int argc);
 int		ft_check_int(char **arguments);
 long	ft_atoi(const char *str);
+char    *get_next_line(int fd);
+char    *ft_strchr(char *str, int c);
+int     ft_check_not_number(char *args);
+int     ft_check_double(t_stack **stack_a);
+int     ft_check_sorted(t_stack **stack_a);
+void	ft_free(t_stack **stack_a);
 
 #endif

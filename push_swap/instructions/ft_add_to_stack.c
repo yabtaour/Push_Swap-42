@@ -9,7 +9,7 @@
 /*   Updated: 2022/03/10 17:25:32 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+#include "instruction.h"
 
 t_stack	*ft_add_to_stack_back(t_stack *stack, int data)
 {

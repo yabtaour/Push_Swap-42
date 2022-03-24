@@ -15,7 +15,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "../push_swap.h"
+# include <fcntl.h>
 
 typedef struct s_stack{
 	int				data;
@@ -24,6 +24,7 @@ typedef struct s_stack{
 	int				pos;
 }	t_stack;
 
+
 void	ft_sa(t_stack **stack_a);
 void	ft_sb(t_stack **stack_b);
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
@@ -31,6 +32,9 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b);
 void	ft_pa(t_stack **stack_b, t_stack **stack_a);
 void	ft_add_stack_front(t_stack **stack, t_stack *node);
 t_stack	*ft_create_node(int data, int pos);
+t_stack	*ft_add_to_stack_back(t_stack *stack, int data);
+t_stack	*ft_add_to_stack_back_pos(t_stack *stack, int data, int pos);
+t_stack	*ft_new_node(int data);
 void	ft_ra(t_stack **stack_a);
 void	ft_rb(t_stack **stack_b);
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);
