@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-# define BUFFER_SIZE 1
-
 
 char	*ft_read(int fd, char *str)
 {
@@ -90,7 +88,7 @@ char	*ft_get_rest(char *str)
 	return (line);
 }
 
-char    *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
 	static char	*current_line;
 	char		*line;

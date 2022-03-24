@@ -24,7 +24,6 @@ typedef struct s_stack{
 	int				pos;
 }	t_stack;
 
-
 void	ft_sa(t_stack **stack_a);
 void	ft_sb(t_stack **stack_b);
 void	ft_ss(t_stack **stack_a, t_stack **stack_b);
@@ -51,5 +50,6 @@ void	print_rb(t_stack **stack_b);
 void	print_rr(t_stack **stack_a, t_stack **stack_b);
 void	print_rra(t_stack **stack_a);
 void	print_rrb(t_stack **stack_b);
+void	ft_putstr(char *str);
 
 #endif

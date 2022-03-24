@@ -12,6 +12,7 @@ SRC = main.c ft_calloc.c ft_split.c ft_strjoin.c\
 		ft_sort_2nums.c ft_find_position.c\
 		ft_sort_100.c ft_sort_5nums.c\
 		parsing.c ft_free_stack.c\
+		./instructions/ft_putstr.c\
 
 
 SRC_IN = ./instructions/ft_sa.c\
@@ -54,6 +55,8 @@ SRC_BONUS = get_next_line.c\
 			./instructions/ft_rrb.c\
 			./instructions/ft_rrr.c\
 			ft_free_stack.c\
+			./instructions/ft_putstr.c\
+			ft_strcmp.c\
 
 
 OBJ = ${SRC:.c=.o}

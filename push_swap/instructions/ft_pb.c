@@ -13,7 +13,7 @@
 
 void	print_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	printf("pb\n");
+	ft_putstr("pb\n");
 	ft_pb(stack_a, stack_b);
 }
 

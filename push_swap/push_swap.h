@@ -14,6 +14,8 @@
 
 # include "./instructions/instruction.h"
 
+# define BUFFER_SIZE 1
+
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_substr(char *s, int start, size_t len);
 void	*ft_calloc(int count, int size);
@@ -34,11 +36,12 @@ void	free_split(char **arguments);
 char	*ft_join_args(char *argv[], int argc);
 int		ft_check_int(char **arguments);
 long	ft_atoi(const char *str);
-char    *get_next_line(int fd);
-char    *ft_strchr(char *str, int c);
-int     ft_check_not_number(char *args);
-int     ft_check_double(t_stack **stack_a);
-int     ft_check_sorted(t_stack **stack_a);
+char	*get_next_line(int fd);
+char	*ft_strchr(char *str, int c);
+int		ft_check_not_number(char *args);
+int		ft_check_double(t_stack **stack_a);
+int		ft_check_sorted(t_stack **stack_a);
 void	ft_free(t_stack **stack_a);
+int		ft_strcmp(char	*s1, char	*s2);
 
 #endif

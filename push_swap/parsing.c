@@ -65,7 +65,7 @@ int	ft_check_sorted(t_stack **stack_a)
 	t_stack	*stack_a_clone;
 
 	stack_a_clone = *stack_a;
-	while (stack_a_clone->next)
+	while (*stack_a && stack_a_clone->next)
 	{
 		if (stack_a_clone->data > stack_a_clone->next->data)
 			return (1);

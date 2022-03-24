@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-#include <string.h>
 
 char	*ft_join_args(char *argv[], int argc)
 {
@@ -36,12 +35,12 @@ int	ft_check_int(char **arguments)
 	{
 		if (ft_atoi(arguments[i]) > ft_atoi("2147483647"))
 		{
-			printf("Error\n");
+			ft_putstr("Error\n");
 			return (0);
 		}
 		if (ft_atoi(arguments[i]) < ft_atoi("-2147483648"))
 		{
-			printf("Error\n");
+			ft_putstr("Error\n");
 			return (0);
 		}
 		i++;

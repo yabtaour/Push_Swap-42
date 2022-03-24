@@ -13,7 +13,7 @@
 
 void	print_rr(t_stack **stack_a, t_stack **stack_b)
 {
-	printf("rr\n");
+	ft_putstr("rr\n");
 	ft_rr(stack_a, stack_b);
 }
 

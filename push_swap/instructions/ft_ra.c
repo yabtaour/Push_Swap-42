@@ -13,7 +13,7 @@
 
 void	print_ra(t_stack **stack_a)
 {
-	printf("ra\n");
+	ft_putstr("ra\n");
 	ft_ra(stack_a);
 }
 

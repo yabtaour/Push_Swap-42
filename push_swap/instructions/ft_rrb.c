@@ -13,7 +13,7 @@
 
 void	print_rrb(t_stack **stack_b)
 {
-	printf("rrb\n");
+	ft_putstr("rrb\n");
 	ft_rrb(stack_b);
 }
 

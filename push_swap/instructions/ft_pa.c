@@ -13,7 +13,7 @@
 
 void	print_pa(t_stack **stack_b, t_stack **stack_a)
 {
-	printf("pa\n");
+	ft_putstr("pa\n");
 	ft_pa(stack_b, stack_a);
 }
 

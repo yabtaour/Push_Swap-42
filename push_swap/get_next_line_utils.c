@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-char    *ft_strchr(char *str, int c)
+char	*ft_strchr(char *str, int c)
 {
 	if (!str)
 		return (NULL);

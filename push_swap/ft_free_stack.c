@@ -16,7 +16,7 @@ void	ft_free(t_stack **stack_a)
 	t_stack	*stack_a_clone;
 
 	stack_a_clone = *stack_a;
-	while ((*stack_a)->next)
+	while (*stack_a && (*stack_a)->next)
 	{
 		stack_a_clone = (*stack_a)->next;
 		free(*(stack_a));

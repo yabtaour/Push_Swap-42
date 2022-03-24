@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort.c                                    :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 21:40:57 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 21:40:59 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/24 03:26:22 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/24 03:26:23 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-int	ft_check_sort(t_stack *stack)
+int	ft_strcmp(char	*s1, char	*s2)
 {
-	t_stack	*stack_clone;
+	int	i;
+	int	j;
 
-	stack_clone = stack;
-	while (stack && stack_clone->next != NULL)
+	i = 0;
+	while (s1 [i] != '\0' && s2 [i] != '\0' && s1 [i] == s2 [i])
 	{
-		if (stack_clone->data > (stack_clone->next)->data)
-			return (1);
-		stack_clone = stack_clone->next;
+		i++;
 	}
-	return (0);
+	if (s1 == s2)
+	{
+		j = 0;
+	}
+	else
+	{
+		j = s1 [i] - s2 [i];
+	}
+	return (j);
 }

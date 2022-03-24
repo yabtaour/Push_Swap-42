@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabtaour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 21:40:57 by yabtaour          #+#    #+#             */
-/*   Updated: 2022/03/10 21:40:59 by yabtaour         ###   ########.fr       */
+/*   Created: 2022/03/24 02:41:33 by yabtaour          #+#    #+#             */
+/*   Updated: 2022/03/24 02:41:34 by yabtaour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+#include "instruction.h"
 
-int	ft_check_sort(t_stack *stack)
+void	ft_putchar(char c)
 {
-	t_stack	*stack_clone;
+	write(1, &c, 1);
+}
 
-	stack_clone = stack;
-	while (stack && stack_clone->next != NULL)
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str)
 	{
-		if (stack_clone->data > (stack_clone->next)->data)
-			return (1);
-		stack_clone = stack_clone->next;
+		while (str[i] != '\0')
+		{	
+			ft_putchar(str[i]);
+			i++;
+		}
 	}
-	return (0);
 }
