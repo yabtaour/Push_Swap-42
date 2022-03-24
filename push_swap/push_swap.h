@@ -43,5 +43,6 @@ int		ft_check_double(t_stack **stack_a);
 int		ft_check_sorted(t_stack **stack_a);
 void	ft_free(t_stack **stack_a);
 int		ft_strcmp(char	*s1, char	*s2);
+void	ft_instruction_error(t_stack **stack_a, t_stack **stack_b, char *in);
 
 #endif

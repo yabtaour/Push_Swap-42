@@ -51,6 +51,7 @@ int	ft_check_double(t_stack **stack_a)
 			if (stack_a_clone->data == stack_a_clone2->data)
 			{
 				printf("Error\n");
+				ft_free(stack_a);
 				return (0);
 			}
 			stack_a_clone2 = stack_a_clone2->next;
@@ -71,5 +72,6 @@ int	ft_check_sorted(t_stack **stack_a)
 			return (1);
 		stack_a_clone = stack_a_clone->next;
 	}
+	ft_free(stack_a);
 	return (0);
 }

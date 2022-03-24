@@ -57,6 +57,7 @@ SRC_BONUS = get_next_line.c\
 			ft_free_stack.c\
 			./instructions/ft_putstr.c\
 			ft_strcmp.c\
+			instruction_error.c\
 
 
 OBJ = ${SRC:.c=.o}

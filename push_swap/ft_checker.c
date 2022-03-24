@@ -36,13 +36,7 @@ void	ft_execute(t_stack **stack_a, t_stack **stack_b, char *instructions)
 	else if (ft_strcmp(instructions, "sb\n") == 0)
 		ft_sb(stack_b);
 	else
-	{
-		ft_putstr("Error\n");
-		ft_free(stack_b);
-		ft_free(stack_a);
-		free(instructions);
-		exit(1);
-	}
+		ft_instruction_error(stack_a, stack_b, instructions);
 }
 
 void	ft_result(t_stack **stack)
